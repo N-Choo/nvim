@@ -40,6 +40,7 @@
             gzip
             gnutar
             gnumake
+            imagemagick
             stdenv.cc
           ];
           text = ''

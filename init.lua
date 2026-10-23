@@ -49,4 +49,8 @@ require("lazy").setup({
 	require("plugins.tiny-diagnostic"),
 	require("plugins.none-ls"),
 	require("plugins.vbg"),
+}, {
+	-- image.nvim uses the ImageMagick CLI, so Lua rocks (luarocks/hererocks,
+	-- which need a Lua 5.1 toolchain) are not required.
+	rocks = { enabled = false },
 })

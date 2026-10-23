@@ -48,6 +48,21 @@ The first launch clones `lazy.nvim` and installs plugins into
 nix profile install github:n-choo/nvim
 ```
 
+### HPC / nix-portable
+
+If `nix` is provided by [nix-portable](https://github.com/DavHau/nix-portable)
+(the store is under `~/.nix-portable`), its default runtime may fail with
+`setting up a private mount namespace: Operation not permitted`. Select a
+different runtime before invoking Nix:
+
+```bash
+export NP_RUNTIME=bwrap   # or: NP_RUNTIME=proot
+nix run github:n-choo/nvim
+```
+
+This must be set in the shell that calls `nix`; a flake cannot change the
+runtime of the Nix process that evaluates it.
+
 ## Keymaps
 
 The leader key is `<Space>`.
