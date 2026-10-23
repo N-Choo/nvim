@@ -77,56 +77,56 @@ return {
     -- =========================================================================
     -- 1. MASON MANAGED SERVERS (Auto-Installed)
     -- =========================================================================
-  local servers = {
-    ts_ls = {},
-    ruff = {},
-    pylsp = {
-      settings = {
-        pylsp = {
-          plugins = {
-            flake8 = { enabled = true, maxLineLength = 88 },
-            pylsp_mypy = { enabled = true, dmypy = true },
-            pylsp_black = { enabled = true },
-            pylsp_isort = { enabled = true, profile = 'black' },
-            pyflakes = { enabled = false },
-            pycodestyle = { enabled = false },
-            pylint = { enabled = false },
-            mccabe = { enabled = false },
-            pydocstyle = { enabled = false },
-          },
-        },
-      },
-    },
-    html = { filetypes = { 'html', 'twig', 'hbs' } },
-    cssls = {},
-    sqlls = {},
-    terraformls = {},
-    jsonls = {},
-    clangd = {
-      filetypes = {"c", "cpp", "h", "hpp"},
-      cmd = {"clangd","--fallback-style=llvm"},
-      init_options = { compilationDatabasePath = "." },
-      settings = { formatting = { style = "file" } },
-    },
-    lua_ls = {
-      settings = {
-        Lua = {
-          completion = { callSnippet = 'Replace' },
-          runtime = { version = 'LuaJIT' },
-          workspace = {
-            checkThirdParty = false,
-            library = {
-              '${3rd}/luv/library',
-              unpack(vim.api.nvim_get_runtime_file('', true)),
+    local servers = {
+      ts_ls = {},
+      tinymist = {},
+      ruff = {},
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              flake8 = { enabled = true, maxLineLength = 88 },
+              pylsp_mypy = { enabled = true, dmypy = true },
+              pylsp_black = { enabled = true },
+              pylsp_isort = { enabled = true, profile = 'black' },
+              pyflakes = { enabled = false },
+              pycodestyle = { enabled = false },
+              pylint = { enabled = false },
+              mccabe = { enabled = false },
+              pydocstyle = { enabled = false },
             },
           },
-          diagnostics = { globals = { 'vim' }, disable = { 'missing-fields' } },
-          format = { enable = false },
         },
       },
-    },
-  }
-
+      html = { filetypes = { 'html', 'twig', 'hbs' } },
+      cssls = {},
+      sqlls = {},
+      terraformls = {},
+      jsonls = {},
+      clangd = {
+        filetypes = { 'c', 'cpp', 'h', 'hpp' },
+        cmd = { 'clangd', '--fallback-style=llvm' },
+        init_options = { compilationDatabasePath = '.' },
+        settings = { formatting = { style = 'file' } },
+      },
+      lua_ls = {
+        settings = {
+          Lua = {
+            completion = { callSnippet = 'Replace' },
+            runtime = { version = 'LuaJIT' },
+            workspace = {
+              checkThirdParty = false,
+              library = {
+                '${3rd}/luv/library',
+                unpack(vim.api.nvim_get_runtime_file('', true)),
+              },
+            },
+            diagnostics = { globals = { 'vim' }, disable = { 'missing-fields' } },
+            format = { enable = false },
+          },
+        },
+      },
+    }
 
     -- =========================================================================
     -- 2. MASON SETUP (Install Tools)

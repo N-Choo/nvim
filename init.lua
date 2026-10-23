@@ -44,7 +44,7 @@ require("lazy").setup({
 	require("plugins.gitsigns"),
 	require("plugins.misc"),
 	require("plugins.indent-blankline"),
-	-- require("plugins.flutter"),
+	require("plugins.typst"),
 	require("plugins.treesitter-context"),
 	require("plugins.tiny-diagnostic"),
 	require("plugins.none-ls"),
