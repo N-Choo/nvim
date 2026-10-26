@@ -80,6 +80,16 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Swap insert/append: i = right of cursor, a = left of cursor
+vim.keymap.set('n', 'i', 'a', { noremap = true, silent = true, desc = 'Insert right of cursor' })
+vim.keymap.set('n', 'a', 'i', { noremap = true, silent = true, desc = 'Insert left of cursor' })
+vim.keymap.set('n', 'I', 'A', { noremap = true, silent = true, desc = 'Insert at end of line' })
+vim.keymap.set('n', 'A', 'I', { noremap = true, silent = true, desc = 'Insert at start of line' })
+
+-- Move current line with Arrow Up/Down
+vim.keymap.set('n', '<Up>', ':m .-2<CR>==', { noremap = true, silent = true, desc = 'Move line up' })
+vim.keymap.set('n', '<Down>', ':m .+1<CR>==', { noremap = true, silent = true, desc = 'Move line down' })
+
 -- Move lines with Alt+Arrows
 vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<M-k>', ':m .-2<CR>==', { noremap = true, silent = true })

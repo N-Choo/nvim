@@ -26,6 +26,7 @@ return { -- Highlight, edit, and navigate code
       'bash',
       'tsx',
       'css',
+      'typst',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

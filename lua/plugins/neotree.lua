@@ -6,11 +6,6 @@ return {
     'nvim-tree/nvim-web-devicons',
     'MunifTanjim/nui.nvim',
     {
-      '3rd/image.nvim',
-      build = false, -- use the ImageMagick CLI instead of the magick Lua rock
-      opts = { processor = 'magick_cli' },
-    },
-    {
       's1n7ax/nvim-window-picker',
       version = '2.*',
       config = function()
@@ -144,7 +139,10 @@ return {
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
           ['<esc>'] = 'cancel', -- close preview or floating neo-tree window
-          ['P'] = { 'toggle_preview', config = { use_float = true } },
+          ['P'] = {
+            'toggle_preview',
+            config = { use_float = true, use_snacks_image = true, use_image_nvim = false },
+          },
           ['l'] = 'open',
           ['S'] = 'open_split',
           ['s'] = 'open_vsplit',
